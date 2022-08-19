@@ -2,9 +2,11 @@ import pandas as pd
 import numpy as np
 import yfinance as yf
 
+start_date = '2011-01-01'
+end_date = '2022-01-01'
 
 def download_prices(tickers):
-    df = yf.download(tickers.split(), '2020-1-1')['Adj Close']
+    df = yf.download(tickers.split(), start=start_date, end=end_date)['Adj Close']
     df = df[-253:]
     return df
 

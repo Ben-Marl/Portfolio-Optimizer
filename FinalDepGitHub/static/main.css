@@ -1,17 +1,42 @@
 /*Custom css styles*/
 
+html,
 body {
-    background: #fafafa;
-    color: #333333;
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+footer
+{
+    width: 100%;
+    
+    position: absolute;
+    bottom: 0px;
+}
+/* Other Classes for Page Styling */
+
+body {
+    background-image: url(bg.jpg);
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;   
+    z-index: -1;
+    color: #ffffff;
     margin-top: 5rem;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+    color: #ffffff;
   }
   
   .bg-steel {
-    background-color: #43afda;
+    background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
   }
   
   .site-header .navbar-nav .nav-link {
@@ -60,7 +85,7 @@ body {
   }
   
   .article-metadata a:hover {
-    color: #333;
+    color: rgb(24, 101, 129);
     text-decoration: none;
   }
   
@@ -83,10 +108,18 @@ body {
   
   .button{
     position: relative;
-    background-color: #7c9ee9;
+    background-color: #056dae;
   }
   
   .table {
-      border-collapse: separate;
-      border-spacing: 0 1em;
+    border-collapse: separate;
+    color: rgb(255, 255, 255);
+    border-spacing: 0 1em;
   }
+
+main
+{
+  position: relative;
+  z-index: 1;
+  background: rgb(0,0,0,0.5);
+}
