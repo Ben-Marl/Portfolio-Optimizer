@@ -21,9 +21,9 @@ footer
 
 body {
     background-image: url(bg.jpg);
+    background-size: cover;
     height: 100%;
     width: 100%;
-    background-repeat: no-repeat;
     content: "";
     position: absolute;
     top: 0; 
