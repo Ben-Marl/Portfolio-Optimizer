@@ -3,6 +3,7 @@
 html,
 body {
   height: 100%;
+  width: 100%;
 }
 
 #page-content {
@@ -20,6 +21,9 @@ footer
 
 body {
     background-image: url(bg.jpg);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
     content: "";
     position: absolute;
     top: 0; 
