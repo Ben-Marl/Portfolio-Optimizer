@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import yfinance as yf
 
-start_date = '2011-01-01'
+start_date = '2021-01-01'
 end_date = '2022-01-01'
 
 def download_prices(tickers):
@@ -66,6 +66,8 @@ def optimize(tickers):
     # use the min, max values to locate and create the two special portfolios
     max_sharpe_port = df_portfolio.loc[is_max_sharpe]
     df_max = max_sharpe_port.transpose().iloc[3:]
+    df_max.iloc[:,0] = df_max.iloc[:,0].round(decimals = 3)
+    df_max.iloc[:,0] = (df_max.iloc[:,0] * 100)
     df1 = df_max.iloc[:,0]
     finalMax = list(df1)
     
@@ -77,6 +79,8 @@ def optimize(tickers):
     
     min_vol_port = df_portfolio.loc[is_min_vol]
     df_min = min_vol_port.transpose().iloc[3:]
+    df_min.iloc[:,0] = df_min.iloc[:,0].round(decimals = 3)
+    df_min.iloc[:,0] = (df_min.iloc[:,0] * 100)
     df2 = df_min.iloc[:,0]
     finalMin = list(df2)  
     
