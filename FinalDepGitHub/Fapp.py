@@ -47,7 +47,9 @@ def calculate():
         values = data.values()
         print(list(labels))
         print(list(values))
-        return render_template('pie.html', labels = list(labels), values = list(values))
+        val=list(values)
+        val = [x * 100 for x in val]
+        return render_template('pie.html', labels = list(labels), values = val)
         
        # return redirect(url_for('home'))
              
