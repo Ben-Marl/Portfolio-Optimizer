@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, url_for, flash, redirect, jsonify
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from user import User, create_dict, creates_dict
+import json
 
 
 from calculate import Calculate_portfolio
@@ -41,6 +42,8 @@ def calculate():
         flash("Portfolio generated successfully!", "info")
         flash( "Your optimal portfolio distribution for minimum risk is: " + str(maxll), "info")
         flash( "Your optimal portfolio distribution for maximum return is: " + str(minll), "info")
+        #jdata = json.load(maxll)
+        print(maxll)
         
         data = create_dict(tickers, max_weights)
         labels = data.keys()
@@ -48,7 +51,7 @@ def calculate():
         print(list(labels))
         print(list(values))
         val=list(values)
-        val = [x * 100 for x in val]
+        val = [x * 1 for x in val]
         return render_template('pie.html', labels = list(labels), values = val)
         
        # return redirect(url_for('home'))
